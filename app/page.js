@@ -72,8 +72,8 @@ export default function PageSelector() {
   const pagesList = Object.keys(selectedPages).filter(key => key !== "all")
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <div className="w-full max-w-[370px] bg-white rounded-lg shadow-xl p-6">
+    <div className="flex items-center justify-center min-h-screen ">
+      <div className="w-full max-w-[370px] bg-white rounded-lg shadow-[0_-1px_8px_rgba(0,0,0,0.15),0_10px_12px_rgba(0,0,0,0.15)] p-6">
         <div className="space-y-4">
           {/* All pages checkbox */}
           <label
