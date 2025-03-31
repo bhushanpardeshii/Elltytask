@@ -111,7 +111,7 @@ export default function PageSelector() {
           </div>
 
           <button
-            className="w-full bg-[#FFCE22] hover:bg-[#FFD84D] cursor-pointer text-black py-3 rounded-md mt-4 transition-colors text-[14px] leading-[130%] font-normal font-montserrat"
+            className="w-full bg-[#FFCE22] hover:bg-[#FFD84D] cursor-pointer text-black py-3 rounded-md mt-2 transition-colors text-[14px] leading-[130%] font-normal font-montserrat"
             onClick={() => console.log("Selected pages:", selectedPages)}
           >
             Done
