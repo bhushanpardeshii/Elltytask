@@ -51,7 +51,7 @@ export default function PageSelector() {
   const Checkbox = ({ page, isSelected, onHover }) => (
     <div
       className={cn(
-        "h-5 w-5 rounded border mx-1 flex items-center justify-center transition-all duration-75",
+        "h-5 w-5 rounded border-[#CDCDCD] border mx-1 flex items-center justify-center transition-all duration-75",
         clickedCheckbox === page && "ring-4 ring-[#5087F8]/20",
         isSelected
           ? onHover
@@ -64,8 +64,8 @@ export default function PageSelector() {
         handleClick(page)
       }}
     >
-      {isSelected && <Check className="h-3.5 w-3.5 text-white" />}
-      {!isSelected && onHover && <Check className="h-3.5 w-3.5 text-gray-400 opacity-50" />}
+      {isSelected && <Check className="h-4 w-4 text-white" />}
+      {!isSelected && onHover && <Check className="h-4 w-4 text-gray-400 opacity-50" />}
     </div>
   )
 
@@ -73,16 +73,16 @@ export default function PageSelector() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
+      <div className="w-full max-w-[370px] bg-white rounded-lg shadow-xl p-6">
         <div className="space-y-4">
           {/* All pages checkbox */}
           <label
-            className="flex items-center justify-between cursor-pointer py-2"
+            className="flex items-center justify-between cursor-pointer mx-1 py-1"
             onMouseEnter={() => setHoveredCheckbox("all")}
             onMouseLeave={() => setHoveredCheckbox(null)}
             onClick={() => handleClick("all")}
           >
-            <span className="text-[14px] leading-[130%] font-normal">All pages</span>
+            <span className="text-[14px] leading-[130%] font-normal font-montserrat">All pages</span>
             <Checkbox
               page="all"
               isSelected={selectedPages.all}
@@ -91,16 +91,16 @@ export default function PageSelector() {
           </label>
 
           {/* Pages list */}
-          <div className="border-t border-b border-[#CDCDCD] py-2 space-y-3 max-h-[200px] overflow-y-auto scrollbar-hide">
+          <div className="border-t border-b border-[#CDCDCD] py-2  space-y-3 max-h-[200px] overflow-y-auto scrollbar-hide">
             {pagesList.map((pageKey, index) => (
               <label
                 key={pageKey}
-                className="flex items-center text-black justify-between cursor-pointer py-2"
+                className="flex items-center text-black justify-between cursor-pointer mx-1 py-2"
                 onMouseEnter={() => setHoveredCheckbox(pageKey)}
                 onMouseLeave={() => setHoveredCheckbox(null)}
                 onClick={() => handleClick(pageKey)}
               >
-                <span className="text-[14px] leading-[130%] font-normal">Page {index + 1}</span>
+                <span className="text-[14px] leading-[130%] font-normal font-montserrat">Page {index + 1}</span>
                 <Checkbox
                   page={pageKey}
                   isSelected={selectedPages[pageKey]}
@@ -111,7 +111,7 @@ export default function PageSelector() {
           </div>
 
           <button
-            className="w-full bg-[#FFCE22] hover:bg-[#FFD84D] cursor-pointer text-black py-3 rounded-md mt-4 transition-colors text-[14px] leading-[130%] font-normal"
+            className="w-full bg-[#FFCE22] hover:bg-[#FFD84D] cursor-pointer text-black py-3 rounded-md mt-4 transition-colors text-[14px] leading-[130%] font-normal font-montserrat"
             onClick={() => console.log("Selected pages:", selectedPages)}
           >
             Done
